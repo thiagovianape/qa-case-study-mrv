@@ -5,13 +5,13 @@ Exploratory Quality Assurance analysis of a public corporate website for learnin
 
 ---
 
-## 🧠 Objective
+## Objective
 This repository documents a Quality Assurance exploratory analysis conducted on a public corporate website (https://www.mrv.com.br).  
 The goal is to practice QA skills by identifying technical warnings, integration issues, and potential improvements observable from the client side.
 
 ---
 
-## 🔍 Scope
+## Scope
 This QA study focuses on:
 - Homepage and publicly accessible pages
 - Browser console analysis
@@ -23,7 +23,7 @@ This QA study focuses on:
 
 ---
 
-## 🧪 Methodology
+## Methodology
 The investigation was performed via:
 - Manual exploratory testing
 - Operating System: macOS
@@ -37,7 +37,7 @@ Tools used:
 
 ---
 
-## 📌 Findings
+## Findings
 
 ### 1️⃣ Malformed JSON-LD (Organization Schema)
 
@@ -81,7 +81,7 @@ The reCAPTCHA script references a callback function that is not defined in the g
 
 ---
 
-## 🧾 Conclusion
+## Conclusion
 This case study highlights technical warnings observable through browser console inspection that may impact SEO, analytics, and third-party integrations.  
 Although no direct user-facing malfunction was identified on the homepage, these findings represent quality improvement opportunities from a technical perspective.
 
