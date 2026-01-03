@@ -41,11 +41,20 @@ Tools used:
 
 ### 1️⃣ Malformed JSON-LD (Organization Schema)
 
+📎 Evidence: [View console screenshot](evidence/json-ld-meta-pixel-error.png)
+
 **Description:**  
 The webpage contains a JSON-LD structured data block that is not well-formed, causing parsing errors in third-party tools.
 
-**Error observed:**  
+**Environment:**  
+- OS: macOS  
+- Browser: Safari (Desktop)  
+- Date observed: Jan 2026
+
+<strong>Error observed:</strong><br>
+<span style="font-family: monospace; background-color: #f6f8fa; padding: 4px 6px; border-radius: 4px;">
 [Meta Pixel] - Unable to parse JSON-LD tag. Malformed JSON found
+</span>
 
 **Root cause:**  
 The `telephone` property is incorrectly declared inside the `sameAs` array, which makes the JSON structure invalid.
@@ -62,11 +71,20 @@ The `telephone` property is incorrectly declared inside the `sameAs` array, whic
 
 ### 2️⃣ reCAPTCHA Callback Warning
 
+📎 Evidence: [View console screenshot](evidence/recaptcha-callback-warning.png)
+
 **Description:**  
 A warning is displayed in the browser console during page load related to Google reCAPTCHA.
 
-**Error observed:**  
+**Environment:**  
+- OS: macOS  
+- Browser: Safari (Desktop)  
+- Date observed: Jan 2026
+
+<strong>Error observed:</strong><br>
+<span style="font-family: monospace; background-color: #f6f8fa; padding: 4px 6px; border-radius: 4px;">
 reCAPTCHA couldn't find user-provided function: onloadcallback
+</span>
 
 **Root cause:**  
 The reCAPTCHA script references a callback function that is not defined in the global scope.
