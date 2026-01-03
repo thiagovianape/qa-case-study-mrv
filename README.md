@@ -1,53 +1,58 @@
-# qa-case-study-mrv
-Exploratory QA analysis of a public corporate website
 # QA Case Study – Public Website Analysis (MRV)
 
-## Objective
+Exploratory Quality Assurance analysis of a public corporate website for learning and portfolio purposes.
+
+
+---
+
+## 🧠 Objective
 This repository documents a Quality Assurance exploratory analysis conducted on a public corporate website (https://www.mrv.com.br).  
 The goal is to practice QA skills by identifying technical warnings, integration issues, and potential improvements observable from the client side.
 
 ---
 
-## Scope
+## 🔍 Scope
 This QA study focuses on:
 - Homepage and publicly accessible pages
 - Browser console analysis
 - Third-party integrations (reCAPTCHA, Meta Pixel)
 - Structured data validation (JSON-LD / Schema.org)
-- SEO/Analytics impact
+- SEO and analytics impact
 
 > No access to proprietary source code, backend systems, or private assets was used.
 
 ---
 
-## Methodology
+## 🧪 Methodology
 The investigation was performed via:
-1. Manual browsing in desktop browser (Chrome)
-2. Opening DevTools (F12) → Console
-3. Observing warnings and data structures
-4. Verifying behavior with simple user flows
+- Manual exploratory testing
+- Operating System: macOS
+- Browser: Safari (Desktop)
+- Observation of warnings and data structures
+- Verification of behavior with simple user flows
 
 Tools used:
-- Chrome DevTools  
+- Safari Web Inspector  
 - Browser console  
-- Visual Studio Code (Markdown editing)
 
 ---
 
-## Findings
+## 📌 Findings
 
-### Malformed JSON-LD (Organization Schema)
+### 1️⃣ Malformed JSON-LD (Organization Schema)
+
 **Description:**  
-The webpage contains JSON-LD structured data block that is not well-formed, causing parsing errors.
+The webpage contains a JSON-LD structured data block that is not well-formed, causing parsing errors in third-party tools.
 
 **Error observed:**  
+[Meta Pixel] - Unable to parse JSON-LD tag. Malformed JSON found
 
 **Root cause:**  
-The `telephone` property is located inside the `sameAs` array, which is syntactically invalid.
+The `telephone` property is incorrectly declared inside the `sameAs` array, which makes the JSON structure invalid.
 
 **Impact:**
 - SEO tools (Google) may ignore structured data
-- Analytics and social pixel (Meta/Facebook) cannot extract organization info
+- Analytics and social platforms (Meta/Facebook) cannot extract organization information
 - Potential loss of rich results and data consistency
 
 **Severity:** Medium  
@@ -55,29 +60,33 @@ The `telephone` property is located inside the `sameAs` array, which is syntacti
 
 ---
 
-### reCAPTCHA callback warning
+### 2️⃣ reCAPTCHA Callback Warning
+
 **Description:**  
-Browser console displays warning when loading Google reCAPTCHA:
+A warning is displayed in the browser console during page load related to Google reCAPTCHA.
+
+**Error observed:**  
+reCAPTCHA couldn't find user-provided function: onloadcallback
 
 **Root cause:**  
-The reCAPTCHA script references a non-existent callback function in the global scope.
+The reCAPTCHA script references a callback function that is not defined in the global scope.
 
 **Impact:**
-- May affect form validation under some conditions
+- Potential risk to form validation under specific conditions
 - Does not block immediate user interaction
-- Requires developer attention in scripts
+- Requires technical review of script loading order
 
 **Severity:** Medium  
-**Type:** Integration / Script loading
+**Type:** Integration / Script Loading
 
 ---
 
-## Conclusion
-This case study highlights technical warnings observable in the browser console that may impact SEO, analytics, and third-party integrations.  
-Although no direct user-facing malfunction was found on the homepage, these issues are worth addressing from a quality standpoint.
+## 🧾 Conclusion
+This case study highlights technical warnings observable through browser console inspection that may impact SEO, analytics, and third-party integrations.  
+Although no direct user-facing malfunction was identified on the homepage, these findings represent quality improvement opportunities from a technical perspective.
 
 ---
 
-## Disclaimer
+## ⚠️ Disclaimer
 This project is for educational and portfolio purposes only.  
-All data and artifacts are based on publicly accessible browser behavior.
+All observations are based on publicly accessible browser behavior.
